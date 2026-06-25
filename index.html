@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basra — The Classic Fishing Card Game</title>
+  <meta name="description" content="Basra is the classic Arabic fishing card game: capture cards from the table by matching or adding them up, sweep with a Jack, and clear the table for a Basra. Play solo vs AI or online with friends. Free.">
+  <meta property="og:title" content="Basra — The Classic Fishing Card Game">
+  <meta property="og:description" content="Capture, sweep with Jacks, and score Basras. Play solo vs AI or online with friends — cross-platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --bg: #0c2a1a; --bg2: #06160e; --panel: #123524; --line: #2c4a38;
+      --gold: #c99a2e; --gold-deep: #a47a20; --gold-light: #e6c766;
+      --text: #ece4ce; --muted: #9a93808a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+           background: radial-gradient(120% 80% at 50% -10%, #15452c 0%, var(--bg) 45%, var(--bg2) 100%);
+           color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--gold-light); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+    header { text-align: center; padding: 56px 20px 24px; }
+    .logo { width: 240px; max-width: 64vw; border-radius: 50%;
+            box-shadow: 0 12px 40px rgba(0,0,0,.6), 0 0 0 2px rgba(201,154,46,.45);
+            display: block; margin: 0 auto 22px; }
+    .logo-fallback { width: 240px; height: 240px; max-width: 64vw; margin: 0 auto 22px;
+            border-radius: 50%; display: grid; place-items: center; text-align: center;
+            background: radial-gradient(circle at 50% 35%, #1a6b40, #0a3a22);
+            border: 2px solid var(--gold); }
+    h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); margin: .1em 0 .1em; letter-spacing: .5px;
+         background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
+         -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+    .tagline { color: var(--gold); text-transform: uppercase; letter-spacing: 3px;
+               font-size: .82rem; font-weight: 700; margin: 0 0 6px; }
+    .lede { color: #cfc7b2; max-width: 640px; margin: 14px auto 0; font-size: 1.08rem; }
+
+    .badges { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 28px 0 8px; }
+    .badge { display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+             background: linear-gradient(180deg, #1c1c26, #121219); color: var(--text);
+             border: 1px solid var(--line); border-radius: 12px; padding: 11px 18px; font-weight: 600;
+             min-width: 190px; }
+    .badge:hover { border-color: var(--gold); }
+    .badge small { display: block; color: #b7af9a; font-weight: 500; font-size: .72rem; letter-spacing: .4px; }
+    .badge .big { font-size: 1.05rem; }
+    .badge.soon { opacity: .65; }
+
+    section { padding: 26px 0; }
+    h2 { color: var(--gold-light); font-size: 1.5rem; margin: 0 0 4px; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 16px; }
+    .card .ico { font-size: 1.7rem; }
+    .card h3 { margin: 8px 0 4px; font-size: 1.08rem; color: var(--text); }
+    .card p { margin: 0; color: #c2bba6; font-size: .96rem; }
+
+    .rules { background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+             padding: 6px 20px; margin-top: 16px; }
+    .rules li { margin: .5em 0; color: #cfc7b2; }
+    .rules b { color: var(--gold-light); }
+
+    footer { text-align: center; color: #8b8472; font-size: .9rem; padding: 36px 20px 56px; border-top: 1px solid var(--line); margin-top: 28px; }
+    footer a { margin: 0 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <!-- logo.png ships alongside this page; the block below is a text fallback. -->
+      <img class="logo" src="logo.png" alt="Basra" onerror="this.outerHTML='&lt;div class=&quot;logo-fallback&quot;&gt;&lt;div&gt;&lt;div style=&quot;font-size:2rem;font-weight:800;color:%23e6c766&quot;&gt;BASRA&lt;/div&gt;&lt;div style=&quot;font-size:.7rem;letter-spacing:2px;color:%23c99a2e&quot;&gt;THE CLASSIC FISHING CARD GAME&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;'">
+      <p class="tagline">The Classic Fishing Card Game</p>
+      <h1>Basra</h1>
+      <p class="lede">The classic Arabic fishing card game. <strong>Capture</strong> cards
+        from the table by matching their value or adding them up, sweep the whole table with a
+        <strong>Jack</strong>, and clear it in one play for a <strong>Basra</strong>. Play solo
+        vs AI or online with friends — free.</p>
+
+      <div class="badges">
+        <a class="badge soon" href="#" aria-label="Coming soon to the App Store">
+          <span>🍎</span><span><small>Coming soon to the</small><span class="big">App Store</span></span>
+        </a>
+        <a class="badge soon" href="#" aria-label="Coming soon to Google Play">
+          <span>▶️</span><span><small>Coming soon to</small><span class="big">Google Play</span></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>What makes it different</h2>
+      <div class="features">
+        <div class="card"><div class="ico">🎣</div><h3>Capture the table</h3>
+          <p>Play a card that matches a table card's value — or one that equals the sum of several — and scoop them into your pile.</p></div>
+        <div class="card"><div class="ico">🅹</div><h3>Jacks sweep</h3>
+          <p>A Jack takes the entire table at once. Queens and Kings grab their own kind.</p></div>
+        <div class="card"><div class="ico">✨</div><h3>Basra bonus</h3>
+          <p>Clear the whole table in a single capture for a Basra — a bonus 10 points.</p></div>
+        <div class="card"><div class="ico">🤖</div><h3>Solo vs AI</h3>
+          <p>Three difficulty levels. Free-for-all (2–4 players) or 2v2 Partnership, with name-able opponents.</p></div>
+        <div class="card"><div class="ico">🌐</div><h3>Online &amp; cross-platform</h3>
+          <p>Invite a friend, host a private room, or join a random table — live across iPhone and Android, with rematch.</p></div>
+        <div class="card"><div class="ico">🏆</div><h3>Leaderboards</h3>
+          <p>Global, Friends and Single-Player boards track your wins, podiums and win rate.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How it plays</h2>
+      <ul class="rules">
+        <li>Everyone gets 4 cards; 4 more lie face-up on the table. <b>Tap a card</b> to play it.</li>
+        <li><b>Capture</b> by matching a table card's number (Ace = 1) or by playing a card equal to the <b>sum</b> of some table cards. A <b>Jack</b> sweeps everything.</li>
+        <li>Clear the table in one capture for a <b>Basra (+10)</b>. The last capture takes the leftovers.</li>
+        <li>Score for <b>most cards</b>, Aces, the 10♦, the 2♣, Jacks and Basras — the best total wins the match.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="privacy-policy.html">Privacy Policy</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="mailto:jportelli24@outlook.com">Contact</a>
+      <p>© 2026 illetro · Basra is a card game by John Portelli.</p>
+    </div>
+  </footer>
+</body>
+</html>
