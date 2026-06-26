@@ -12,57 +12,59 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root {
-      --bg: #0c2a1a; --bg2: #06160e; --panel: #123524; --line: #2c4a38;
-      --gold: #c99a2e; --gold-deep: #a47a20; --gold-light: #e6c766;
-      --text: #ece4ce; --muted: #9a93808a;
+      --panel: #ffffff; --line: #e2dccf;
+      --gold: #c99a2e; --gold-deep: #a47a20;
+      --text: #2c2925; --muted: #7a7164;
     }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-           background: radial-gradient(120% 80% at 50% -10%, #15452c 0%, var(--bg) 45%, var(--bg2) 100%);
+           background: radial-gradient(140% 90% at 50% -10%, #faf7f2 0%, #ece7e0 45%, #ddd5c9 100%);
+           background-attachment: fixed;
            color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: var(--gold-light); }
+    a { color: var(--gold-deep); }
     .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
 
     header { text-align: center; padding: 56px 20px 24px; }
-    .logo { width: 240px; max-width: 64vw; border-radius: 50%;
-            box-shadow: 0 12px 40px rgba(0,0,0,.6), 0 0 0 2px rgba(201,154,46,.45);
+    .logo { width: 220px; max-width: 60vw; border-radius: 24%;
+            box-shadow: 0 16px 44px rgba(120,100,60,.28), 0 0 0 1px rgba(201,154,46,.35);
             display: block; margin: 0 auto 22px; }
-    .logo-fallback { width: 240px; height: 240px; max-width: 64vw; margin: 0 auto 22px;
-            border-radius: 50%; display: grid; place-items: center; text-align: center;
-            background: radial-gradient(circle at 50% 35%, #1a6b40, #0a3a22);
-            border: 2px solid var(--gold); }
+    .logo-fallback { width: 220px; height: 220px; max-width: 60vw; margin: 0 auto 22px;
+            border-radius: 24%; display: grid; place-items: center; text-align: center;
+            background: linear-gradient(160deg, #f4f0ea, #ded7cb);
+            border: 1px solid var(--gold); }
     h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); margin: .1em 0 .1em; letter-spacing: .5px;
-         background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
+         background: linear-gradient(180deg, #d2a437, #9a7016);
          -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
-    .tagline { color: var(--gold); text-transform: uppercase; letter-spacing: 3px;
+    .tagline { color: var(--gold-deep); text-transform: uppercase; letter-spacing: 3px;
                font-size: .82rem; font-weight: 700; margin: 0 0 6px; }
-    .lede { color: #cfc7b2; max-width: 640px; margin: 14px auto 0; font-size: 1.08rem; }
+    .lede { color: #4a443c; max-width: 640px; margin: 14px auto 0; font-size: 1.08rem; }
 
     .badges { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 28px 0 8px; }
     .badge { display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
-             background: linear-gradient(180deg, #1c1c26, #121219); color: var(--text);
+             background: #fff; color: var(--text);
              border: 1px solid var(--line); border-radius: 12px; padding: 11px 18px; font-weight: 600;
-             min-width: 190px; }
+             min-width: 190px; box-shadow: 0 4px 14px rgba(120,100,60,.10); }
     .badge:hover { border-color: var(--gold); }
-    .badge small { display: block; color: #b7af9a; font-weight: 500; font-size: .72rem; letter-spacing: .4px; }
+    .badge small { display: block; color: var(--muted); font-weight: 500; font-size: .72rem; letter-spacing: .4px; }
     .badge .big { font-size: 1.05rem; }
-    .badge.soon { opacity: .65; }
+    .badge.soon { opacity: .7; }
 
     section { padding: 26px 0; }
-    h2 { color: var(--gold-light); font-size: 1.5rem; margin: 0 0 4px; }
+    h2 { color: var(--gold-deep); font-size: 1.5rem; margin: 0 0 4px; }
 
     .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 18px; }
-    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 16px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 16px;
+            box-shadow: 0 6px 18px rgba(120,100,60,.08); }
     .card .ico { font-size: 1.7rem; }
     .card h3 { margin: 8px 0 4px; font-size: 1.08rem; color: var(--text); }
-    .card p { margin: 0; color: #c2bba6; font-size: .96rem; }
+    .card p { margin: 0; color: #5b5345; font-size: .96rem; }
 
     .rules { background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
-             padding: 6px 20px; margin-top: 16px; }
-    .rules li { margin: .5em 0; color: #cfc7b2; }
-    .rules b { color: var(--gold-light); }
+             padding: 6px 20px; margin-top: 16px; box-shadow: 0 6px 18px rgba(120,100,60,.08); }
+    .rules li { margin: .5em 0; color: #4a443c; }
+    .rules b { color: var(--gold-deep); }
 
-    footer { text-align: center; color: #8b8472; font-size: .9rem; padding: 36px 20px 56px; border-top: 1px solid var(--line); margin-top: 28px; }
+    footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 36px 20px 56px; border-top: 1px solid var(--line); margin-top: 28px; }
     footer a { margin: 0 10px; }
   </style>
 </head>
@@ -70,7 +72,7 @@
   <header>
     <div class="wrap">
       <!-- logo.png ships alongside this page; the block below is a text fallback. -->
-      <img class="logo" src="logo.png" alt="Basra" onerror="this.outerHTML='&lt;div class=&quot;logo-fallback&quot;&gt;&lt;div&gt;&lt;div style=&quot;font-size:2rem;font-weight:800;color:%23e6c766&quot;&gt;BASRA&lt;/div&gt;&lt;div style=&quot;font-size:.7rem;letter-spacing:2px;color:%23c99a2e&quot;&gt;THE CLASSIC FISHING CARD GAME&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;'">
+      <img class="logo" src="logo.png" alt="Basra" onerror="this.outerHTML='&lt;div class=&quot;logo-fallback&quot;&gt;&lt;div&gt;&lt;div style=&quot;font-size:2rem;font-weight:800;color:%23a47a20&quot;&gt;BASRA&lt;/div&gt;&lt;div style=&quot;font-size:.7rem;letter-spacing:2px;color:%237a7164&quot;&gt;THE CLASSIC FISHING CARD GAME&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;'">
       <p class="tagline">The Classic Fishing Card Game</p>
       <h1>Basra</h1>
       <p class="lede">The classic Arabic fishing card game. <strong>Capture</strong> cards
